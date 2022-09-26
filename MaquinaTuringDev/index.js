@@ -191,7 +191,7 @@
             for (counterTuring = 0; counterTuring < arrayTuringData.length; counterTuring++) {
 
                 if (arrayTuringData.length > 1) {
-                    if (arrayTuringData[counterTuring] == '>' && ( DataCheck.test(arrayTuringData[counterTuring + 1]) || arrayTuringData[counterTuring + 1] == 'Δ' ) ) {
+                    if (arrayTuringData[counterTuring] == '>' && ( DataCheck.test(arrayTuringData[counterTuring + 1]) || arrayTuringData[counterTuring + 1] == 'Δ' || arrayTuringData[counterTuring + 2] == 'δ' ) ) {
                         console.log('Buscar a la derecha del slot' + StarterSlot);
                         let slotDerecha = document.querySelector(`#slot${parseInt(CurrentSlot) + 1}`);
                         LastSlot = CurrentSlot;
@@ -205,7 +205,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                             document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                             document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                            if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase()) {
+                            if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
                                 console.log('Encontre el slot' + contadorBusqueda);
                                 break;
                             }
@@ -220,7 +220,7 @@
                         counterTuring++;
                         }
                     }
-                    else if (arrayTuringData[counterTuring] == '>' && arrayTuringData[counterTuring + 1] == '!' && ( DataCheck.test(arrayTuringData[counterTuring + 2]) || arrayTuringData[counterTuring + 2] == 'Δ' ) ) {
+                    else if (arrayTuringData[counterTuring] == '>' && arrayTuringData[counterTuring + 1] == '!' && ( DataCheck.test(arrayTuringData[counterTuring + 2]) || arrayTuringData[counterTuring + 2] == 'Δ' || arrayTuringData[counterTuring + 2] == 'δ' ) ) {
                         console.log('Buscando Diferente Derecha del slot' + StarterSlot);
                         let slotDerecha = document.querySelector(`#slot${parseInt(CurrentSlot) + 1}`);
                         LastSlot = CurrentSlot;
@@ -235,7 +235,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                                 document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                                 document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                                if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase()) {
+                                if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
                                     console.log('Encontre el slot' + contadorBusqueda);
                                     break;
                                 }
@@ -268,7 +268,7 @@
 
                         }
                     }
-                    else if (arrayTuringData[counterTuring] == '<' && ( DataCheck.test(arrayTuringData[counterTuring + 1]) || arrayTuringData[counterTuring + 1] == 'Δ' ) ) {
+                    else if (arrayTuringData[counterTuring] == '<' && ( DataCheck.test(arrayTuringData[counterTuring + 1]) || arrayTuringData[counterTuring + 1] == 'Δ') ) {
                         console.log('Buscar a la izquierda');
                         let slotIzquierda = document.querySelector(`#slot${parseInt(CurrentSlot) - 1}`);
                         LastSlot = CurrentSlot;
@@ -283,7 +283,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                                 document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                                 document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                                if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase()) {
+                                if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
                                     console.log('Encontre el slot' + contadorBusqueda);
                                     break;
                                 }
@@ -298,7 +298,7 @@
                             counterTuring++;
                             }
                         }
-                        else if (arrayTuringData[counterTuring] == '<' && arrayTuringData[counterTuring + 1] == '!' && ( DataCheck.test(arrayTuringData[counterTuring + 2]) || arrayTuringData[counterTuring + 2] == 'Δ' ) ) {
+                    else if (arrayTuringData[counterTuring] == '<' && arrayTuringData[counterTuring + 1] == '!' && ( DataCheck.test(arrayTuringData[counterTuring + 2]) || arrayTuringData[counterTuring + 2] == 'Δ' ) ) {
                         console.log('Buscando Diferente Izquierda del slot' + StarterSlot);
                         let slotIzquierda = document.querySelector(`#slot${parseInt(CurrentSlot) - 1}`);
                         LastSlot = CurrentSlot;
@@ -313,7 +313,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                             document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                             document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                            if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase()) {
+                            if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
                                 console.log('Encontre el slot' + contadorBusqueda);
                                 break;
                             }
