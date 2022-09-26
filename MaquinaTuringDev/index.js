@@ -205,7 +205,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                             document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                             document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                            if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
+                            if (arrayTuringData[contadorSites + 1].toLowerCase() == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
                                 console.log('Encontre el slot' + contadorBusqueda);
                                 break;
                             }
@@ -235,7 +235,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                                 document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                                 document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                                if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
+                                if (arrayTuringData[contadorSites + 2].toLowerCase != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
                                     console.log('Encontre el slot' + contadorBusqueda);
                                     break;
                                 }
@@ -283,7 +283,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                                 document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                                 document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                                if (arrayTuringData[contadorSites + 1] == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
+                                if (arrayTuringData[contadorSites + 1].toLowerCase() == document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 1] == 'δ') {
                                     console.log('Encontre el slot' + contadorBusqueda);
                                     break;
                                 }
@@ -313,7 +313,7 @@
                                 document.querySelector(`#slot${CurrentSlot}`).style.backgroundColor = 'green';
                             document.querySelector(`#slot${LastSlot}`).style.backgroundColor = 'white';
                             document.querySelector(`#slot${StarterSlot}`).style.backgroundColor = 'orange';
-                            if (arrayTuringData[contadorSites + 2] != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
+                            if (arrayTuringData[contadorSites + 2].toLowerCase() != document.querySelector(`#slot${CurrentSlot}`).value.toLowerCase() || arrayTuringData[contadorSites + 2] == 'δ') {
                                 console.log('Encontre el slot' + contadorBusqueda);
                                 break;
                             }
