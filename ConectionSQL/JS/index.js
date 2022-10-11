@@ -2,11 +2,12 @@ window.onload = () => {
 
     document.querySelector('#btnData').addEventListener('click', async () => {
         const data = document.querySelector('#inputData').value;
-        const Cadena = [...data];
+        const Cadena = [...data,'*'];
         const responseDB = await fetch('http://localhost:3000/consulta');
         const dataDB = await responseDB.json();
 
         let flagEmpty = 'Sin nada';
+        let flagFinal = 'Aun no termina';
         
         dataDB.forEach(element => {
             if (element.Estado0 != null && element.Caracter == Cadena[0]) {
@@ -18,29 +19,52 @@ window.onload = () => {
                 }
             }
         });
+
+        //Hacer expresion regular para validar que solo sean letras y numeros
         
-        if (flagEmpty == 'Valido') {
+
+        const validarCadena = /^[A-Za-z0-9_.]+$/;
+        console.log(Cadena);
+        for (let i = 0; i < Cadena.length - 1; i++) {
+            if (validarCadena.test(Cadena[i])) {
+                console.log('Valido');
+                flagFinal = 'Valido';
+            }
+            else {
+                console.log('Invalido');
+                flagFinal = 'Invalido';
+                break;
+            }
+        }
+        
+        if (flagFinal == 'Valido') {
 
             for (let index = 1; index < Cadena.length; index++) {
                 const element = Cadena[index];
-                dataDB.forEach(char => {
-                    if (char.Caracter == element) {
-                        console.log('Caracter valido');
-                        if (char.Caracter == ';') {
-                            flagEmpty = 'DELIMITADOR ENCONTRADO';
-                        } else {
-                            if (flagEmpty != 'DELIMITADOR ENCONTRADO') {
 
-                                flagEmpty = 'ERROR NO EXISTE DELIMITADOR';
-                            }
+                if (element == '*') {
+                    flagFinal = 'Fin de cadena';
+                    break;
+                }
+                else {
+                    dataDB.forEach(char => {
+                        if (char.Caracter == element) {
+                            console.log('Caracter valido');
                         }
-                    }
-                });
+                    });
+                }
             }
-            alert(flagEmpty);
+            if (flagFinal == 'Fin de cadena') {
+                if (flagEmpty == 'Valido') {
+                    alert('Cadena valida');
+                }
+                else {
+                    alert('Cadena invalida');
+                }
+            }
         }
         else {
-            alert('ERROR: AL INICIAR LA CADENA');
+            alert('ERROR: LA CADENA NO ES VALIDA');
         }
 
     }); 
