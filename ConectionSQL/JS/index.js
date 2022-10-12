@@ -57,7 +57,7 @@ window.onload = () => {
                     document.querySelector('#divFinal').style.color = 'green';
                 }
                 else {
-                    document.querySelector('#divFinal').innerHTML = 'ERROR: Cadena valida';
+                    document.querySelector('#divFinal').innerHTML = 'ERROR: Cadena ivalida';
                     document.querySelector('#divFinal').style.color = 'red';
                 }
             }
