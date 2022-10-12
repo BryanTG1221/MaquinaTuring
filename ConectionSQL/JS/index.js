@@ -19,10 +19,7 @@ window.onload = () => {
                 }
             }
         });
-
-        //Hacer expresion regular para validar que solo sean letras y numeros
-        
-
+    
         const validarCadena = /^[A-Za-z0-9_.]+$/;
         console.log(Cadena);
         for (let i = 0; i < Cadena.length - 1; i++) {
@@ -56,15 +53,18 @@ window.onload = () => {
             }
             if (flagFinal == 'Fin de cadena') {
                 if (flagEmpty == 'Valido') {
-                    alert('Cadena valida');
+                    document.querySelector('#divFinal').innerHTML = 'COMPLETADO: Cadena valida';
+                    document.querySelector('#divFinal').style.color = 'green';
                 }
                 else {
-                    alert('Cadena invalida');
+                    document.querySelector('#divFinal').innerHTML = 'ERROR: Cadena valida';
+                    document.querySelector('#divFinal').style.color = 'red';
                 }
             }
         }
         else {
-            alert('ERROR: LA CADENA NO ES VALIDA');
+            document.querySelector('#divFinal').innerHTML = 'ERROR: Cadena invalida';
+            document.querySelector('#divFinal').style.color = 'red';
         }
 
     }); 
